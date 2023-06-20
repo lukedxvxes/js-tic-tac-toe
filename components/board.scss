@@ -1,0 +1,27 @@
+#board {
+  //   border: 1px solid;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 500px;
+  width: 500px;
+
+  .tile {
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    &:disabled {
+      opacity: 0.95;
+      pointer-events: none;
+    }
+  }
+
+  .tile:not(:nth-child(3n)) {
+    border-right: 1px solid;
+  }
+
+  .tile:not(:nth-child(n + 7)) {
+    border-bottom: 1px solid;
+  }
+}
